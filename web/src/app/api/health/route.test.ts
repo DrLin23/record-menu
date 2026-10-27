@@ -1,0 +1,15 @@
+import { describe, it, expect } from "vitest";
+import { GET } from "./route";
+
+describe("GET /api/health", () => {
+  it("responds 200 with status ok and a numeric uptime", async () => {
+    const res = await GET();
+
+    expect(res.status).toBe(200);
+
+    const body = await res.json();
+    expect(body.status).toBe("ok");
+    expect(typeof body.uptime).toBe("number");
+    expect(body.uptime).toBeGreaterThanOrEqual(0);
+  });
+});
