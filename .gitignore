@@ -1,0 +1,13 @@
+# OS / editor noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Secrets: never commit real env files — but DO keep the template
+.env
+.env.*
+!.env.example
+
+# Node (web/ has its own ignore; this is a safety net for the root)
+node_modules/
